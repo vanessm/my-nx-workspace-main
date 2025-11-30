@@ -1,4 +1,5 @@
 import nx from '@nx/eslint-plugin';
+import sonarjs from 'eslint-plugin-sonarjs';
 
 export default [
   ...nx.configs['flat/base'],
@@ -60,7 +61,16 @@ export default [
       '**/*.cjs',
       '**/*.mjs',
     ],
-    // Override or add rules here
-    rules: {},
+    plugins: {
+      sonarjs,
+    },
+    rules: {
+      // 🎯 SonarJS - Règles Critiques (Bugs & Vulnérabilités)
+      'sonarjs/no-all-duplicated-branches': 'error',        // Éviter conditions identiques
+      'sonarjs/no-element-overwrite': 'error',              // Éviter écrasement de variables
+      'sonarjs/no-identical-conditions': 'error',           // Conditions identiques
+      'sonarjs/no-use-of-empty-return-value': 'error',      // Utilisation de retour void
+      'sonarjs/no-collection-size-mischeck': 'error',       // Vérification taille collection
+    },
   },
 ];

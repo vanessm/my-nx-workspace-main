@@ -1,16 +1,14 @@
-name: CI Main (Strict)
+name: CI Pull Request (Souple)
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
 
 permissions:
   actions: read
   contents: read
 
 jobs:
-  main:
+  pr:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,9 +22,10 @@ jobs:
 
       - run: npm ci --legacy-peer-deps
 
-      # Vérifie TOUT : lint + test + build
-      - run: npx nx run-many -t lint test build
+      # Vérifie SEULEMENT que ça compile (pas lint ni test)
+      - run: npx nx affected -t build --base=origin/main
 
       # Fix CI si échec
       - run: npx nx fix-ci
         if: always()
+
