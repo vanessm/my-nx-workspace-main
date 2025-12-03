@@ -27,9 +27,30 @@ describe('Authentication', () => {
   });
 
   it('should allow user to sign in with valid credentials', () => {
-    // Fill in the sign-in form
-    cy.get('input[type="email"]').type('test@example.com');
-    cy.get('input[type="password"]').type('password123');
+    // First, create a user via sign-up to ensure we have valid credentials
+    const uniqueEmail = `signin-${Date.now()}@example.com`;
+    const password = 'password123';
+
+    // Create user via sign-up
+    cy.visit('/auth/sign-up');
+    cy.get('input[type="email"]').type(uniqueEmail);
+    cy.get('input[type="password"]').first().type(password);
+    cy.get('input[type="password"]').last().type(password);
+    cy.get('button[type="submit"]').click();
+
+    // Wait for redirect to orders page after sign-up
+    cy.url().should('include', '/orders', { timeout: 10000 });
+
+    // Clear session/localStorage to simulate logout
+    cy.clearLocalStorage();
+    cy.clearCookies();
+
+    // Now visit sign-in page
+    cy.visit('/auth/sign-in');
+
+    // Test sign-in with the newly created user
+    cy.get('input[type="email"]').type(uniqueEmail);
+    cy.get('input[type="password"]').type(password);
     cy.get('button[type="submit"]').click();
 
     // Should redirect to orders page after successful login
@@ -39,8 +60,11 @@ describe('Authentication', () => {
   it('should allow user to sign up', () => {
     cy.visit('/auth/sign-up');
 
+    // Generate a unique email to avoid conflicts with existing users
+    const uniqueEmail = `test-${Date.now()}@example.com`;
+
     // Fill in the sign-up form
-    cy.get('input[type="email"]').type('newuser@example.com');
+    cy.get('input[type="email"]').type(uniqueEmail);
     cy.get('input[type="password"]').first().type('password123');
     cy.get('input[type="password"]').last().type('password123');
     cy.get('button[type="submit"]').click();
@@ -49,4 +73,3 @@ describe('Authentication', () => {
     cy.url().should('include', '/orders', { timeout: 10000 });
   });
 });
-

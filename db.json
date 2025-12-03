@@ -4,6 +4,56 @@
       "email": "contact@2aiconcept.com",
       "password": "$2a$10$HFdi7gDFMk8pSdUipdL.EevXnW3U3GliOm258Mzx/lAELNWJ3pWvS",
       "id": 1
+    },
+    {
+      "email": "newuser@example.com",
+      "password": "$2a$10$nt9NT1AylPi9qN4.BZZdqeYsrBYw8NLrJEzAiX1vBcd.HMZZ5S3f.",
+      "id": 2
+    },
+    {
+      "email": "c.gueroult@2aiconcept.com",
+      "password": "$2a$10$8iI79p6XzEwPhzVlKcTFDeBq1qoXU2Q27GWRJMCbPkrBfZ690Yf2K",
+      "id": 3
+    },
+    {
+      "email": "test-1764775676689@example.com",
+      "password": "$2a$10$6IENjstbFMFam3KPkt4t8.ND11.SzmHX5zyedzzaba/4EblR3xFMK",
+      "id": 4
+    },
+    {
+      "email": "signin-1764775687558@example.com",
+      "password": "$2a$10$LT.fa.hVJiMfIRrMo/eby.jg/Kf2c4xratId0DdX/WVXNHws2ym0e",
+      "id": 5
+    },
+    {
+      "email": "test-1764775692074@example.com",
+      "password": "$2a$10$kSeCrdoSDSZdzE18me.mT.yezau1uj6arkR2OJjbnoSOkSbM4DFXW",
+      "id": 6
+    },
+    {
+      "email": "signin-1764775706098@example.com",
+      "password": "$2a$10$uLaqYD1re8sh85pveYuE4udHPxNqeQtYYIrDjoKkXFDmn/LxckzYS",
+      "id": 7
+    },
+    {
+      "email": "signin-1764775715989@example.com",
+      "password": "$2a$10$IhK3PBa/WckESyEOX.N1oecWBASVfH0n9c49nOvDQOoVVHDi7zINS",
+      "id": 8
+    },
+    {
+      "email": "test-1764775719895@example.com",
+      "password": "$2a$10$.VeNluRcJPiKVxxtBId3b.1GihNIM82OYOVxVGKh93okJ3MVHKFIq",
+      "id": 9
+    },
+    {
+      "email": "signin-1764775762013@example.com",
+      "password": "$2a$10$2rLFEzn6/apBGtXWtFSjX.XO6XYO/dRQK1j6GnDnaWMXlVfeM2sdG",
+      "id": 10
+    },
+    {
+      "email": "test-1764775766167@example.com",
+      "password": "$2a$10$HSIUP2q1iKkAKRA80A7O1OLtiYkCIhbKp7172X998ySkNmkvbxoOq",
+      "id": 11
     }
   ],
   "orders": [

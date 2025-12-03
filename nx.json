@@ -1,5 +1,15 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "plugins": [
+    {
+      "plugin": "@nx/cypress/plugin",
+      "options": {
+        "targetName": "e2e",
+        "ciTargetName": "e2e-ci",
+        "openTargetName": "open-cypress"
+      }
+    }
+  ],
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [

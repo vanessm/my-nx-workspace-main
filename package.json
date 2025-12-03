@@ -41,8 +41,10 @@
     "analyze:json": "source-map-explorer dist/apps/mini-crm/browser/**/*.js --json dist/apps/mini-crm/bundle-report.json",
     "analyze:gzip": "source-map-explorer dist/apps/mini-crm/browser/**/*.js --gzip --html dist/apps/mini-crm/bundle-report-gzip.html",
     "build:analyze": "npm run build:prod && npm run analyze",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "e2e": "nx run mini-crm-e2e:e2e",
+    "e2e:open": "nx run mini-crm-e2e:open-cypress",
+    "e2e:ci": "nx run mini-crm-e2e:e2e --configuration=ci",
+    "e2e:prod": "nx run mini-crm-e2e:e2e --configuration=production"
   },
   "private": true,
   "dependencies": {
